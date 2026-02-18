@@ -72,8 +72,8 @@ header {
 }
 
 header img {
-    width: 3vw;
-    height: auto;
+    width: auto;
+    height: calc(1vw + 3vh);
 
     filter: drop-shadow(0 0 2px rgb(93, 92, 92));
 
@@ -838,4 +838,4 @@ footer {
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--orange_dark);
-}
+}d
