@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" href="../../images/NotesPaper.png">
+    <title>DarkPad</title>
+</head>
+<body>  
+    <header>
+        <a>
+            <img src="../../images/NotesPaper.png" alt="DarkPad Logo" id="headerImage">
+        </a>
+        <h1 id="headerText">DarkPad</h1>
+        <div id="headerIcon">
+            <div class="headerIconParts"></div>
+            <div class="headerIconParts"></div>
+            <div class="headerIconParts"></div>
+        </div>
+    </header>
+    
+    <main>
+        <form id="registerForm">
+            <h2>Account Registration</h2>
+
+            <label for="emailInput">Email:</label>
+            <div class="registerInputFields">
+                <input type="email" id="emailInput" name="email" autocomplete="email" required placeholder="Zadajte váš email">
+                <img class="inputStatus" id="emailStatus" src="../../images/QuestionMark.png"></img>
+            </div>
+            <hr>
+
+            <label for="passwordInput">Password:</label>
+            <div class="registerInputFields">
+                <input type="password" id="passwordInput" name="password" minlength="8" maxlength="20" autocomplete="off" required placeholder="Zadajte vaše heslo">
+                <img class="inputStatus" id="passwordStatus" src="../../images/QuestionMark.png"></img>
+            </div>
+            <hr>
+
+            <label for="passwordInputAgain">Password again:</label>
+            <div class="registerInputFields">
+                <input type="password" id="passwordInputAgain" name="passwordAgain" minlength="8" maxlength="20" autocomplete="off" required placeholder="Zadajte vaše heslo">
+                <img class="inputStatus" id="passwordAgainStatus" src="../../images/QuestionMark.png"></img>
+            </div>
+            <hr>
+
+            <button type="submit" id="registerButton">Create account</button>
+            <a id="backToLogin" href="./login.html"><p>Login</p></a>
+        </form>
+    </main>
+
+    <footer>
+        &copy; 2025 Matúš Hupčík
+    </footer>
+
+    <script type="module" src="../../js/account/accountManage.js"></script>
+    <script src="../../js/tools/inputField.js"></script>
+</body>
+</html>

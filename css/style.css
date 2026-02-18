@@ -1,0 +1,842 @@
+/* ------------------------------ Color variables ------------------------------------------- */
+:root {
+    --beige_light: #FAF3E1;
+    --beige_dark: #F5E7C6;
+    --orange_light: #FF6D1F;
+    --orange_dark: #A34A1A;
+    --black_light: #222222;
+    --black_dark: #181416;
+}
+
+/* -------------------------------Body and general styles ----------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--black_light);
+    color: var(--beige_dark);
+}
+
+/* ---------------------------------- Top bar ---------------------------------------- */
+header {
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+
+    padding: 0rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--black_dark);
+}
+
+#headerText {
+    font-size: 1.8rem;
+    opacity: 1;
+
+    background-color: transparent;
+    color: var(--beige_light);
+
+    transition: all 0.3s ease-in;
+}
+
+#headerText a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#headerIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    cursor: pointer;
+
+    gap: 5px;
+}
+
+.headerIconParts {
+    width: 1.5vw;
+    min-width: 30px;
+    height: 3px;
+
+    background-color: var(--beige_light);
+
+    transition: 0.4s;
+}
+
+header img {
+    width: 3vw;
+    height: auto;
+
+    filter: drop-shadow(0 0 2px rgb(93, 92, 92));
+
+    transition: all 0.3s ease-in;
+}
+
+header img:hover {
+    filter: drop-shadow(0 0 4px var(--orange_light));
+}
+
+.menu-open div:nth-child(1) {
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+.menu-open div:nth-child(2) {
+    opacity: 0;
+}
+.menu-open div:nth-child(3) {
+    transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* ------------------------------- Menu ---------------------------------------- */
+nav {
+    position: fixed;
+    top: 0;
+    left: -15vw;
+
+    width: 15vw;
+    height: 100%;
+
+    padding-top: 5vh;
+
+    z-index: 1000;
+
+    background-color: var(--black_dark);
+
+    border-right: 2px solid rgba(0, 0, 0, 0.589);
+    border-radius: 0 8px 8px 0;
+
+    transition: 0.3s;
+}
+
+nav ul {
+    height: 100%;
+
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-left: 1vw;
+}
+
+nav ul li {
+    width: 60%;
+    margin: 0.5rem 0;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;  
+    color: var(--beige_light);
+
+    padding: 0.5rem 1rem;
+    gap: 0.5vw;
+
+    transition: all 0.3s ease-in;
+}
+
+nav ul li a:hover {
+    background-color: var(--orange_dark);
+    border-radius: 8px;
+}
+
+nav.active {
+    left: 0vw;
+}
+
+#createNote {
+    cursor: pointer;
+
+    font-weight: bold;
+
+    background-color: var(--black_light);
+    color: var(--beige_dark);
+
+    border-radius: 4px;
+
+    transition: all 0.3s ease-in;
+}
+
+#createNote:hover {
+    opacity: 1;
+    color: var(--beige_light);
+}
+
+#logout a {
+    position: relative;
+    left: 0;
+    top: 45vh;
+
+    cursor: pointer;
+
+    font-weight: bold;
+    border-radius: 4px;
+
+    color: var(--beige_dark);
+    background-color: #ff4d4d43;
+
+    transition: all 0.3s ease-in;
+}
+
+#logout:hover a{
+    opacity: 1;
+
+    color: var(--beige_light);
+    background-color: #ff4d4d83;
+}
+
+/* ------------------------ Main + Its items ----------------------------- */
+main {
+    width: 50vw;
+    max-height: 77vh;
+
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+
+    background-color: var(--black_dark);
+
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+    gap: 1rem;
+
+    overflow-y: auto;
+}
+
+.main_item {
+    width: calc(25% - 1rem);
+    height: 20vh;
+
+    background-color: var(--orange_dark);
+    color: var(--beige_dark);
+
+    border-radius: 0.5vw;
+    border: 1px solid rgba(0, 0, 0, 0.589);
+
+    font-size: 1.2rem;
+
+    transition: all 0.3s ease-in;
+}
+
+.main_item:hover {
+    background-color: var(--orange_light);
+    color: var(--beige_light);
+}
+
+#main_item_add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_item_button {
+    width: 100%;
+    height: 100%;
+    
+    font-size: inherit;
+    font-weight: bold;
+
+    background-color: transparent;
+    color: inherit;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+#main_item_add_button {
+    font-size: 5rem;
+    font-weight: lighter;
+}  
+
+.noteParentCircles {
+    position: relative;
+    top: 0vh;
+
+    width: 2vw;
+    height: 4vh;
+    
+    border: none;
+    border-radius: 50%;
+    
+    cursor: pointer;
+
+    opacity: 0.8;
+
+    background-repeat: no-repeat;   
+    background-position: center;
+
+    background-color: var(--black_dark);
+    color: var(--beige_light);
+
+    transition: all 0.3s ease-in;
+}
+
+.noteParentCircles:hover {
+    background-color: var(--black_light);
+    box-shadow: 0 0 15px var(--black_dark);
+    opacity: 1;
+}
+
+#backToMenuFromNote { 
+    background-image: url("../images/ArrowBack.png");
+    background-size: 100% 100%;
+}
+
+#removeNoteButton {
+    background-image: url("../images/trashBin.png");
+    background-size: 70% 70%;
+}
+
+/* ------------------------------- Notes create ----------------------------------- */
+#createNoteParent, #createFriendNoteParent {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+
+    z-index: 1001;
+
+    transition: opacity 0.5s ease-out;
+}
+
+#createNoteDiv, #createFriendNoteDiv {
+    width: 50vw;
+    height: 60vh;
+
+    background-color: var(--black_dark);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+    padding: 1rem 2rem;
+}
+
+#createNoteForm, #createFriendNoteForm {
+    width: 100%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+#noteTitle, #noteFriendTitleAdd {
+    width: 100%;
+
+    padding: 0.5rem;
+
+    font-size: 1.2rem;
+
+    border: none;
+    border-radius: 4px;
+}
+
+#noteParent {
+    width: 50vw;
+    height: 70vh;
+
+    background-color: var(--black_dark);
+
+    border: 2px solid var(--black_light);
+}
+
+#noteContent, #friendNoteContent {
+    position: relative;
+    top: 0vh;
+
+    width: 50vw;
+    height: 55vh;
+
+    padding: 2rem;
+
+    border-radius: 1vw;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background-color: var(--black_light);
+}
+
+#noteMenu {
+    position: relative;
+    top: 0;
+
+    width: 46vw;
+    height: 6vh;
+
+    background-color: var(--black_light);
+
+    padding-left: 1vw;
+    padding-right: 1vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 1vw;
+    gap: 1rem;
+}
+
+#cancelNoteButton, #saveNoteButton, #saveFriendNoteButton, #cancelFriendNoteButton {
+    padding: 0.5rem 1rem;
+
+    font-size: 1rem;
+
+    border: none;
+    border-radius: 4px;
+
+    background-color: var(--black_light);
+    color: #f0f0f0;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in;
+}
+
+.noteContentAddInput, .friendNoteContentAddInput {
+    padding: 0.5rem;
+
+    font-size: 1.2rem;
+
+    border-radius: 4px;
+
+    background-color: var(--black_light);
+    border: 1px solid var(--black_light);
+    color: #f0f0f0;
+
+    resize: none;
+}
+
+.noteContentAddInput:focus, .friendNoteContentAddInput:focus {
+    outline: none;
+    border: 1px solid var(--orange_dark);
+}
+
+#noteTitleAdd, #noteFriendTitleAdd {
+    width: 100%;
+    height: 10%;
+}
+
+#noteContentAdd, #friendNoteContentAdd {
+    width: 100%;
+    height: 60%;
+}
+
+/* ------------------------------- Login & Register form ----------------------------------- */
+#loginForm, #registerForm {
+    position: relative;
+
+    width: 50vw;
+
+    padding: 2vw 1vw;
+
+    background-color: transparent;
+
+    display: block;
+    overflow: hidden;
+}
+
+#loginForm hr, #registerForm hr {
+    margin: 1.5rem 0;
+
+    border: 0;
+
+    display: hidden;
+
+    background-color: transparent;
+}
+
+#loginForm h2, #registerForm h2 {
+    position: relative;
+    top: -2%;
+    left: 50%;
+
+    width: 40%; 
+
+    transform: translate(-50%, -50%);
+
+    display: flex; 
+    justify-content: center; 
+    align-self: center; 
+
+    background-color: transparent;
+}
+
+.loginInputFields, .registerInputFields {
+    position: relative;
+    height: auto;
+    display: flex;
+    
+    background-color: transparent;
+
+    gap: 1rem;
+}
+
+#loginForm label, #registerForm label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+#loginForm input:-webkit-autofill, 
+#registerForm input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px var(--black_light) inset !important;
+
+    -webkit-text-fill-color: var(--beige_light) !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+#loginForm input, #registerForm input {
+    width: 100%;
+    height: 5vh;
+
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-right: -3vw;
+
+    border: none;
+    border-radius: 4px;
+    
+    text-align: left;
+    text-justify: center;
+    font-size: 0;
+
+    background-color: var(--black_light);
+    color: var(--beige_light);
+
+    transition: height 0.3s ease-in, font-size 0.3s ease-out;
+}
+
+#loginForm input:not(:placeholder-shown), #registerForm input:not(:placeholder-shown) {
+    font-size: medium;
+}
+
+#loginForm input:focus, #registerForm input:focus {
+    height: 6vh;
+
+    font-size: larger;
+}
+
+#loginButton, #registerButton {
+    position: relative;
+    left: 17vw;
+    bottom: 0vh;
+
+    padding: 0.7rem 1.5rem;
+    font-size: 1.2rem;
+    
+    border: none;
+    border-radius: 4px;
+
+    background-color: var(--orange);
+    color: var(--beige_dark);
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in;
+}
+
+#loginButton:hover, #registerButton:hover {
+    color: var(--beige_light);
+
+    border-radius: 16px;
+}
+
+#loginRegisterLink, #backToLogin{
+    position: relative;
+    left: 37vw;
+    bottom: 3vh;
+
+    color: var(--beige_dark);
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+
+    transition: all 0.3s ease-in;
+}
+
+#loginRegisterLink:hover, #backToLogin:hover {
+    color: var(--orange);
+}
+
+#loginRegisterLink p, #backToLogin p {
+    font-size: 0.8rem;
+}
+
+.inputStatus {
+    position: relative;
+    top: 0.5vh;
+    
+    width: 2vw;
+    height: 4vh;
+}  
+
+/* ------------------------------------- Friends section --------------------------------------- */
+#friendsList, #addFriend, #pendingRequests {
+    width: 100%;
+    
+    background-color: var(--black_light);
+
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.589);
+
+    margin-bottom: 0.5vh;
+    margin-top: 0.5vh;
+
+    padding: 0.5rem 1rem;
+}
+
+#friendsList, #pendingRequests {
+    width: 100%;
+    height: 20vh;
+
+    border: 1px solid #0a0a0a;
+    border-radius: 8px;
+
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 0.5rem;
+
+}
+
+#inviteDivParent, #friendsDivParent {
+    overflow-y: auto;
+
+    width: 100%;
+    height: auto;
+    max-height: 20vh;
+
+    padding: 1vw;
+
+    border-radius: 4px;
+}
+
+#friendStatus, #pendingStatus {
+    font-size: 1.2rem;
+    color: var(--beige_dark);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1vh;
+}
+
+.friendsStatus, .pendingRequest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease-in;
+}
+
+.friendsStatus:hover {
+    background-color: var(--black_dark);
+    color: var(--beige_light);
+}
+
+#addFriend {
+    height: 20vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    gap: 1vh;
+}
+
+#addFriend input {
+    width: 40vw;
+    height: 7vh;
+
+    font-size: 1.2rem;
+
+    padding: 0.5rem;
+
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.589);
+
+    background-color: var(--black_dark);
+    color: var(--beige_light);
+
+    resize: none;
+}
+
+#addFriend input:focus {
+    outline: none;
+    border: 1px solid var(--orange_dark);
+}
+
+#addFriend button {
+    font-size: 1rem;
+
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+
+    background-color: var(--black_dark);
+    color: var(--beige_light);
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in;
+}
+
+#addFriend button:hover {
+    background-color: var(--orange_dark);
+    color: var(--beige_dark);
+}
+
+.inviteDiv, .friendsDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 40vw;
+    height: 7vh;
+
+    padding: 0.5rem;
+
+    border-radius: 10px;
+    border: 1px solid #0a0a0a;
+
+    background-color: var(--black_dark);
+
+    transition: all 0.3s ease-in;
+}
+
+.inviteDiv:hover, .friendsDiv:hover {
+    color: #ffffff;
+
+    border: 1px solid var(--orange_dark);
+}
+
+.inviteDiv span, .friendsDiv span {
+    position: relative;
+
+    width: 20vw;
+
+    font-size: 1.2rem;
+}
+
+.inviteDiv div, .friendsDiv div {
+    position: relative;
+
+    height: 8vh;
+    width: 12vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.inviteButton, .friendButton {
+    padding: 0.5rem 1rem;
+
+    border: none;
+    border-radius: 4px;
+
+    background-color: var(--black_dark);
+    color: #f0f0f0;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in;
+}
+
+.inviteButton:hover, .friendButton:hover {
+    background-color: var(--beige_dark);
+    color: #ffffff;
+}
+
+.sendFriendNote {
+    position: relative;
+
+    width: 16vh;
+    height: 5vh;
+}
+
+.removeFriend {
+    width: 6vh;
+    height: 5vh;
+
+    border-radius: 4px;
+    border: none;
+}
+
+.removeFriend img {
+    position: relative;
+    left: 50%;
+    top: 50%;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    transform: translate(-50%, -50%);
+}
+
+/* --------------------------------------------- Footer ------------------------------------------ */
+footer {
+    position: fixed;
+    bottom: 0;
+
+    width: 100vw;
+
+    text-align: center;
+    padding: 1rem;
+
+    background-color: var(--black_dark);
+}
+
+/* ------------------------------------------- Scroller ----------------------------------------------- */ 
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black_light);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--orange_light);
+    border-radius: 6px;
+    border: 3px solid var(--orange_dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--orange_dark);
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" href="../../images/NotesPaper.png">
+
+    <script type="module" src="../../js/account/accountManage.js"></script>
+    <script type="module">
+        import { noteOthersDivMaker} from '../../js/notes/noteButtonsCreating.js';
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await noteOthersDivMaker();
+        });
+    </script>
+    <title>DarkPad</title>
+</head>
+<body>  
+    <header>
+        <img src="../../images/NotesPaper.png" alt="DarkPad Logo" id="headerImage">
+        <h1 id="headerText">Shared Notes</h1>
+        <div id="headerIcon">
+            <div class="headerIconParts"></div>
+            <div class="headerIconParts"></div>
+            <div class="headerIconParts"></div>
+        </div>
+    </header>
+
+    <nav id="menu">
+        <ul>
+            <li id="createNote"><a class="createNoteClick">Create <p>+</p></a></li>
+            <li><a href="./notes.html">Notes</a></li>
+            <li><a href="./notesFromOthers.html">From Others</a></li>
+            <li><a href="./friends.html">Friends</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./settings.html">Settings</a></li>
+            <li id="logout"><a>Log Out</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+    </main>
+
+    <footer>
+        &copy; 2025 Matúš Hupčík
+    </footer>
+
+    <script type="module" src="../../js/tools/menuManage.js"></script>
+</body>
+</html>

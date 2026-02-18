@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" href="../../images/NotesPaper.png">
+    <title>DarkPad</title>
+    <script type="module" src="../../js/account/accountManage.js"></script>
+</head>
+<body>  
+    <header>
+        <img src="../../images/NotesPaper.png" alt="DarkPad Logo" id="headerImage">
+        <h1 id="headerText">Friends</h1>
+        <div id="headerIcon">
+            <div class="headerIconParts"></div>
+            <div class="headerIconParts"></div>
+            <div class="headerIconParts"></div>
+        </div>
+    </header>
+
+    <nav id="menu">
+        <ul>
+            <li id="createNote"><a class="createNoteClick">Create <p>+</p></a></li>
+            <li><a href="./notes.html">Notes</a></li>
+            <li><a href="./notesFromOthers.html">From Others</a></li>
+            <li><a href="./friends.html">Friends</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./settings.html">Settings</a></li>
+            <li id="logout"><a>Log Out</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div id="friendsList">
+            <div id="friendStatus">
+                <h3>Your Friends</h3>
+            </div>
+            <div id="friendsDivParent">
+                <!-- Friends will be dynamically added here -->
+            </div>
+        </div>
+
+        <div id="pendingRequests">
+            <div id="pendingStatus">
+                <h3>Pending Friend Requests</h3>
+            </div>
+            <div id="inviteDivParent">
+                <!-- Pending requests will be dynamically added here -->
+            </div>
+        </div>
+
+        <div id="addFriend">
+            <h2>Add a New Friend</h2>
+            <input type="text" id="friendUsername" placeholder="Enter friend's Email">
+            <button type="button" id="addFriendButton">Add</button>
+        </div>
+    </main>
+
+    <div id="createFriendNoteParent">
+        <div id="createFriendNoteDiv">
+            <form id="createFriendNoteForm">
+                <h2>Create new note for friend</h2>
+                <h3 id="friendEmailShow"></h3>
+                <label for="noteFriendTitleAdd">Note Name:</label>
+                <input type="text" pattern="^[^\s]+$" minlength="3" maxlength="12" required autocomplete="off" id="noteFriendTitleAdd" class="friendNoteContentAddInput" name="noteFriendTitle" placeholder="Zadajte názov poznámky">
+
+                <label for="friendNoteContentAdd">Note content:</label>
+                <textarea id="friendNoteContentAdd" class="friendNoteContentAddInput" name="friendNoteContent" minlength="5" maxlength="1000" required placeholder="Zadajte obsah poznámky"></textarea>
+
+                <button type="submit" id="saveFriendNoteButton">Create note</button>
+                <button type="reset" id="cancelFriendNoteButton">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="createNoteParent">
+        <div id="createNoteDiv">
+            <form id="createNoteForm">
+                <h2>Create Note</h2>
+                <label for="noteTitleAdd">Note Name (No spaces):</label>
+                <input type="text" pattern="^[^\s]+$" minlength="3" maxlength="12" required autocomplete="off" id="noteTitleAdd" class="noteContentAddInput" name="noteTitle" placeholder="Enter note name">
+
+                <label for="noteContentAdd">Note content:</label>
+                <textarea id="noteContentAdd" class="noteContentAddInput" name="noteContent" minlength="5" maxlength="1000" required placeholder="Enter note content"></textarea>
+
+                <button type="submit" id="saveNoteButton">Create note</button>
+                <button type="reset" id="cancelNoteButton">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Matúš Hupčík
+    </footer>
+    
+    <script type="module" src="../../js/relations/friendsRelatedThingsCreate.js"></script>
+    <script type="module" src="../../js/tools/menuManage.js"></script>
+    <script type="module" src="../../js/relations/friendsManage.js"></script>
+    <script type="module" src="../../js/notes/noteCreate.js"></script>
+</body>
+</html>

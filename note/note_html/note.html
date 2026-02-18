@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" href="../../../images/NotesPaper.png">
+    <title>DarkPad</title>
+</head>
+<body>
+    <header>
+        <a href="../../html/navigation/notes.html">
+            <img src="../../images/NotesPaper.png" alt="DarkPad Logo" id="headerImage">
+        </a>
+        <h1 id="headerText">DarkPad</h1>
+        <div id="headerIcon">
+            <div class="headerIconParts"></div>
+            <div class="headerIconParts"></div>
+            <div class="headerIconParts"></div>
+        </div>
+    </header>
+
+    <nav id="menu">
+        <ul>
+            <li id="createNote"><a class="createNoteClick">Create <p>+</p></a></li>
+            <li><a href="../../html/navigation/notes.html">Notes</a></li>
+            <li><a href="../../html/navigation/notesFromOthers.html">From Others</a></li>
+            <li><a href="../../html/navigation/friends.html">Friends</a></li>
+            <li><a href="../../html/navigation/contact.html">Contact</a></li>
+            <li><a href="../../html/navigation/settings.html">Settings</a></li>
+            <li id="logout"><a>Log Out</a></li>
+        </ul>
+    </nav>
+    
+    <div id="createNoteParent">
+        <div id="createNoteDiv">
+            <form id="createNoteForm">
+                <h2>Create Note</h2>
+                <label for="noteTitleAdd">Note Name (No spaces):</label>
+                <input type="text" pattern="^[^\s]+$" minlength="3" maxlength="12" required autocomplete="off" id="noteTitleAdd" class="noteContentAddInput" name="noteTitle" placeholder="Enter note name">
+
+                <label for="noteContentAdd">Note content:</label>
+                <textarea id="noteContentAdd" class="noteContentAddInput" name="noteContent" minlength="5" maxlength="1000" required placeholder="Enter note content"></textarea>
+
+                <button type="submit" id="saveNoteButton">Create note</button>
+                <button type="reset" id="cancelNoteButton">Cancel</button>
+            </form>
+        </div>
+    </div>
+    
+    <main id="noteParent">
+        <div id="noteMenu">
+            <button id="backToMenuFromNote" class="noteParentCircles"></button>
+            
+            <div id="noteName">
+                <p id="noteContentName">
+                    Loading...
+                </p>
+            </div>
+
+            <button id="removeNoteButton" class="noteParentCircles"></button>
+        </div>
+
+        <div id="noteContent">
+            <p id="noteContentParagraph">
+                Loading...
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Matúš Hupčík
+    </footer>
+
+    <script type="module" src="../../js/notes/noteCreate.js"></script>
+    <script type="module" src="../../js/notes/noteRemove.js"></script>
+    <script type="module" src="../../js/tools/menuManage.js"></script>
+    <script type="module" src="../note_js/noteItemCreate.js"></script>
+</body>
+</html>
