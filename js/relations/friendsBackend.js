@@ -1,10 +1,5 @@
 import { getLoggedUser } from '../account/accountManage.js';
-
-// Requests helper
-const API_URL = "https://darkpad-app.onrender.com";
-const HEADERS = {
-    "Content-Type": "application/json"
-};
+import { API_URL, HEADERS } from '../account/accountManage.js';
 
 const POST_request = async (endpoint, body) => {
     const response = await fetch(`${API_URL}/${endpoint}`, {

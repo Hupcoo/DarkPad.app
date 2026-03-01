@@ -1,3 +1,9 @@
+// ------------ Requests --------------
+export const API_URL = "https://darkpad-app.onrender.com";
+export const HEADERS = {
+    "Content-Type": "application/json"
+};
+
 // ------------ Set User Data --------------
 const setCookie = (name, value, days) => {
     let expires = "";
@@ -45,19 +51,17 @@ export const nullLoggedUser = () => {
 
 // ------------ POST Request Helper --------------
 const POST_request = async (endpoint, body) => {
-    return await fetch(`https://darkpad-app.onrender.com/${endpoint}`, {
+    return await fetch(`${API_URL}/${endpoint}`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: HEADERS,
         body: JSON.stringify(body)
     });
 };
 
 const DELETE_request = async (endpoint, body) => {
-    return await fetch(`https://darkpad-app.onrender.com/${endpoint}`, {
+    return await fetch(`${API_URL}/${endpoint}`, {
         method: "DELETE",
-        headers: {
-            "Content-Type": "application/json"
-        },
+        headers: HEADERS,
         body: JSON.stringify(body)
     });
 };

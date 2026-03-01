@@ -4,12 +4,9 @@ export let NOTESDATAFROMOTHERS = [];
 import { getLoggedUser } from '../account/accountManage.js';
 import { isUserLoggedIn } from '../account/accountManage.js';
 import { nullLoggedUser } from '../account/accountManage.js';
+import { API_URL, HEADERS } from '../account/accountManage.js';
 
 // ------- Helper functions for API requests -------
-const API_URL = "https://darkpad-app.onrender.com";
-const HEADERS = {
-    "Content-Type": "application/json"
-};
 
 const POST_request = async (endpoint, body) => {
     const response = await fetch(`${API_URL}/${endpoint}`, {

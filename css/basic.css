@@ -1,0 +1,130 @@
+/* ------------------------------ Color variables ------------------------------------------- */
+:root {
+    --beige_light: #FAF3E1;
+    --beige_dark: #F5E7C6;
+    --orange_light: #FF6D1F;
+    --orange_dark: #A34A1A;
+    --black_light: #222222;
+    --black_dark: #181416;
+}
+
+/* -------------------------------Body and general styles ----------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--black_light);
+    color: var(--beige_dark);
+
+    overflow-x: hidden;
+}
+
+/* ---------------------------------- Top bar ---------------------------------------- */
+header {
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+
+    padding: 0rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--black_dark);
+}
+
+#headerText {
+    font-size: 1.8rem;
+    opacity: 1;
+
+    background-color: transparent;
+    color: var(--beige_light);
+
+    transition: all 0.3s ease-in;
+}
+
+#headerText a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#headerIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    cursor: pointer;
+
+    gap: 5px;
+}
+
+.headerIconParts {
+    width: 1.5vw;
+    min-width: 30px;
+    height: 3px;
+
+    background-color: var(--beige_light);
+
+    transition: 0.4s;
+}
+
+header img {
+    width: auto;
+    height: calc(1vw + 3vh);
+
+    filter: drop-shadow(0 0 2px rgb(93, 92, 92));
+
+    transition: all 0.3s ease-in;
+}
+
+header img:hover {
+    filter: drop-shadow(0 0 4px var(--orange_light));
+}
+
+.menu-open div:nth-child(1) {
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+.menu-open div:nth-child(2) {
+    opacity: 0;
+}
+.menu-open div:nth-child(3) {
+    transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* --------------------------------------------- Footer ------------------------------------------ */
+footer {
+    position: fixed;
+    bottom: 0;
+
+    width: 100vw;
+
+    text-align: center;
+    padding: 1rem;
+
+    background-color: var(--black_dark);
+}
+
+/* ------------------------------------------- Scroller ----------------------------------------------- */ 
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black_light);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--orange_light);
+    border-radius: 6px;
+    border: 3px solid var(--orange_dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--orange_dark);
+}

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/auth.css">
+    <link rel="stylesheet" href="../../css/basic.css">
     <link rel="icon" href="../../images/NotesPaper.png">
     <title>DarkPad</title>
 </head>
@@ -45,8 +46,10 @@
             </div>
             <hr>
 
-            <button type="submit" id="registerButton">Create account</button>
-            <a id="backToLogin" href="./login.html"><p>Login</p></a>
+            <div id="registerButtons">
+                <button type="submit" id="registerButton">Create account</button>
+                <a id="backToLogin" href="./login.html"><p>Login</p></a>
+            </div>
         </form>
     </main>
 
@@ -54,6 +57,8 @@
         &copy; 2025 Matúš Hupčík
     </footer>
 
+    <script src="../../js/tools/keyboardUp.js"></script>
+    
     <script type="module" src="../../js/account/accountManage.js"></script>
     <script src="../../js/tools/inputField.js"></script>
 </body>

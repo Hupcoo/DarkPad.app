@@ -1,0 +1,208 @@
+/* ------------------------------ Color variables ------------------------------------------- */
+:root {
+    --beige_light: #FAF3E1;
+    --beige_dark: #F5E7C6;
+    --orange_light: #FF6D1F;
+    --orange_dark: #A34A1A;
+    --black_light: #222222;
+    --black_dark: #181416;
+}
+
+/* ------------------------------ Main styles ----------------------------------------- */
+main {
+    position: relative;
+    top: 10vh;
+
+    width: calc(40vw + 20vh);
+    max-height: 77vh;
+
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+
+    background-color: var(--black_dark);
+
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+    gap: 1rem;
+
+    overflow-y: auto;
+    
+    transition: transform 0.3s ease;
+}
+
+#loginForm, #registerForm {
+    position: relative;
+
+    width: 100%;
+
+    padding: 2vw 1vw;
+
+    display: block;
+    overflow: hidden;
+}
+
+#loginForm hr, #registerForm hr {
+    border: 0;
+
+    display: hidden;
+}
+
+#loginForm h2, #registerForm h2 {
+    position: relative;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 60%; 
+
+    font-size: calc(1vw + 1vh);
+
+    display: flex; 
+    justify-content: center; 
+    align-self: center; 
+
+    background-color: transparent;
+}
+
+.loginInputFields, .registerInputFields {
+    position: relative;
+    height: auto;
+    display: flex;
+    
+    background-color: transparent;
+
+    gap: 1rem;
+}
+
+#loginForm label, #registerForm label {
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    font-weight: bold;
+    font-size: calc(0.5vw + 1vh);
+}
+
+#loginForm input:-webkit-autofill, 
+#registerForm input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px var(--black_light) inset !important;
+
+    -webkit-text-fill-color: var(--beige_light) !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+#loginForm input, #registerForm input {
+    width: 100%;
+    height: 5vh;
+
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-right: -3vw;
+
+    border: none;
+    border-radius: 4px;
+    
+    text-align: left;
+    text-justify: center;
+    font-size: 0;
+
+    background-color: var(--black_light);
+    color: var(--beige_light);
+
+    transition: height 0.3s ease-in, font-size 0.3s ease-out;
+}
+
+#loginForm input:not(:placeholder-shown), #registerForm input:not(:placeholder-shown) {
+    font-size: medium;
+}
+
+#loginForm input:focus, #registerForm input:focus {
+    height: 6vh;
+
+    font-size: larger;
+}
+
+#registerButtons, #loginButtons {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding-left: 20%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2vw;
+}
+
+#registerButtons {
+    padding-left: 15%;
+}
+
+#loginButton, #registerButton {
+    position: relative;
+
+    padding: 0.6rem 1.2rem;
+    font-size: calc(0.4vw + 1.5vh);
+    
+    border: none;
+    border-radius: calc(0.5vh + 0.25vw);
+
+    background-color: var(--orange_dark);
+    color: var(--beige_dark);
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in;
+}
+
+#loginButton:hover, #registerButton:hover {
+    color: var(--beige_light);
+    background-color: var(--orange_light);
+
+    border-radius: 16px;
+}
+
+#loginRegisterLink, #backToLogin{
+    position: relative;
+
+    background-color: var(--black_light);
+    color: var(--beige_dark);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1vh 1vw;
+
+    border-radius: calc(0.5vh + 0.25vw);
+
+    text-decoration: none;
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in;
+}
+
+#loginRegisterLink:hover, #backToLogin:hover {
+    color: var(--orange);
+}
+
+#loginRegisterLink p, #backToLogin p {
+    font-size: 0.8rem;
+}
+
+.inputStatus {
+    position: relative;
+    top: 0.5vh;
+    
+    width: auto;
+    height: 4vh;
+}  
