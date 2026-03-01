@@ -45,7 +45,7 @@ export const nullLoggedUser = () => {
 
 // ------------ POST Request Helper --------------
 const POST_request = async (endpoint, body) => {
-    return await fetch(`http://localhost:3000/${endpoint}`, {
+    return await fetch(`https://darkpad-app.onrender.com/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
@@ -53,7 +53,7 @@ const POST_request = async (endpoint, body) => {
 };
 
 const DELETE_request = async (endpoint, body) => {
-    return await fetch(`http://localhost:3000/${endpoint}`, {
+    return await fetch(`https://darkpad-app.onrender.com/${endpoint}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
