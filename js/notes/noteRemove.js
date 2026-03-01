@@ -1,5 +1,4 @@
 import { deleteNote, deleteFriendNote, NOTESDATA, NOTESDATAFROMOTHERS } from './noteBackend.js';
-import { getLoggedUser } from '../account/accountManage.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);

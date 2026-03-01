@@ -1,7 +1,7 @@
 import { getLoggedUser } from '../account/accountManage.js';
 
 // Requests helper
-const API_URL = "http://localhost:3000";
+const API_URL = "https://darkpad-app.onrender.com";
 const HEADERS = {
     "Content-Type": "application/json"
 };
