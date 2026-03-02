@@ -73,10 +73,6 @@ main {
     position: relative;
     height: auto;
     display: flex;
-    
-    background-color: transparent;
-
-    gap: 1rem;
 }
 
 #loginForm label, #registerForm label {
@@ -105,11 +101,13 @@ main {
     margin-right: -3vw;
 
     border: none;
-    border-radius: 4px;
-    
+    border-radius: 6px;
+
     text-align: left;
     text-justify: center;
-    font-size: 0;
+    font-size: calc(1.2vh + 0.6vw) !important;
+
+    gap: 1rem;
 
     background-color: var(--black_light);
     color: var(--beige_light);
@@ -117,14 +115,9 @@ main {
     transition: height 0.3s ease-in, font-size 0.3s ease-out;
 }
 
-#loginForm input:not(:placeholder-shown), #registerForm input:not(:placeholder-shown) {
-    font-size: medium;
-}
-
 #loginForm input:focus, #registerForm input:focus {
     height: 6vh;
-
-    font-size: larger;
+    font-size: calc(1.2vh + 0.7vw) !important;
 }
 
 #registerButtons, #loginButtons {

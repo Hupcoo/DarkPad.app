@@ -5,9 +5,9 @@ if(!menu) {
 
 const menuManage = () => { 
     if (menu.classList.contains('active')) {
-        menu.classList.remove('active'); menuIcon.classList.remove('menu-open'); menu.classList.add('inactive');
+        menu.classList.remove('active'); menuIcon.classList.remove('menu-open');
     } else {
-        menu.classList.remove('inactive'); menu.classList.add('active'); menuIcon.classList.add('menu-open');
+        menu.classList.add('active'); menuIcon.classList.add('menu-open');
     }
 }
 
@@ -17,9 +17,9 @@ menuIcon.addEventListener('click', (event) => {
 });
 
 export const menuClose = () => {
-    menu.classList.remove('active'); menuIcon.classList.remove('menu-open'); menu.classList.add('inactive');
+    menu.classList.remove('active'); menuIcon.classList.remove('menu-open'); 
 }
 
 export const menuOpen = () => {
-    menu.classList.remove('inactive'); menu.classList.add('active'); menuIcon.classList.add('menu-open');
+    menu.classList.add('active'); menuIcon.classList.add('menu-open');
 }

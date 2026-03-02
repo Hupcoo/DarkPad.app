@@ -8,146 +8,66 @@
     --black_dark: #181416;
 }
 
-
-/* ------------------------------- Menu ---------------------------------------- */
-nav {
-    position: fixed;
-    top: 0;
-    left: calc(-1 * (10vh + 5vw));
-
-    width: calc(10vh + 5vw);
-    height: 100%;
-
-    padding-top: 5vh;
-
-    z-index: 1000;
-
-    background-color: var(--black_dark);
-
-    border-right: 2px solid rgba(0, 0, 0, 0.589);
-    border-radius: 0 8px 8px 0;
-
-    transition: 0.3s;
-}
-
-nav ul {
-    height: 100%;
-
-    list-style: none;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    padding-left: 1vw;
-}
-
-nav ul li {
-    width: 60%;
-    margin: 0.5rem 0;
-}
-
-nav ul li a {
-    display: flex;
-    align-items: center;
-
-    text-decoration: none;  
-    color: var(--beige_light);
-
-    padding: 0.5rem 1rem;
-    gap: 0.5vw;
-
-    transition: all 0.3s ease-in;
-}
-
-nav ul li a:hover {
-    background-color: var(--orange_dark);
-    border-radius: 8px;
-}
-
-nav.active {
-    left: 0vw;
-}
-
-#createNote {
-    cursor: pointer;
-
-    font-weight: bold;
-
-    background-color: var(--black_light);
-    color: var(--beige_dark);
-
-    border-radius: 4px;
-
-    transition: all 0.3s ease-in;
-}
-
-#createNote:hover {
-    opacity: 1;
-    color: var(--beige_light);
-}
-
-#logout a {
-    position: relative;
-    left: 0;
-    top: 45vh;
-
-    cursor: pointer;
-
-    font-weight: bold;
-    border-radius: 4px;
-
-    color: var(--beige_dark);
-    background-color: #ff4d4d43;
-
-    transition: all 0.3s ease-in;
-}
-
-#logout:hover a{
-    opacity: 1;
-
-    color: var(--beige_light);
-    background-color: #ff4d4d83;
-}
-
 /* ------------------------ Main + Its items ----------------------------- */
 main {
     position: relative;
-    top: 0vh;
-
-    width: calc(40vw + 20vh);
+    
+    width: 90vw;
+    max-width: 800px; 
     max-height: 77vh;
 
     margin: 2rem auto;
-    padding: 1rem 2rem;
+    padding: 1.5rem;
 
     background-color: var(--black_dark);
-
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    
+.notes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
     gap: 1rem;
 
     overflow-y: auto;
 }
 
 .main_item {
-    width: calc(12vh + 5vw);
-    height: calc(12vh + 5vw);
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    
+    min-width: 90px;
 
     background-color: var(--orange_dark);
     color: var(--beige_dark);
 
-    border-radius: 0.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
     border: 1px solid rgba(0, 0, 0, 0.589);
 
     font-size: 1.2rem;
+    transition: all 0.4s ease;
+}
 
-    transition: all 0.3s ease-in;
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+        width: 95vw;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        padding: 1rem;
+    }
+    .main_item {
+        font-size: 1rem;
+    }
 }
 
 .main_item:hover {
@@ -185,8 +105,8 @@ main {
     position: relative;
     top: 0vh;
 
-    width: 2vw;
-    height: 4vh;
+    width: calc(0.3vw + 4vh);
+    aspect-ratio: 1 / 1;
     
     border: none;
     border-radius: 50%;
@@ -242,8 +162,8 @@ main {
 }
 
 #createNoteDiv, #createFriendNoteDiv {
-    width: 50vw;
-    height: 60vh;
+    width: calc(40vw + 20vh);
+    height: calc(90vh - 15vw);
 
     background-color: var(--black_dark);
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
@@ -269,7 +189,7 @@ main {
     gap: 1rem;
 }
 
-#noteTitle, #noteFriendTitleAdd {
+#noteTitleAdd, #noteFriendTitleAdd {
     width: 100%;
 
     padding: 0.5rem;
@@ -280,9 +200,10 @@ main {
     border-radius: 4px;
 }
 
+/* ------------------------------- Note content ----------------------------------- */
 #noteParent {
-    width: 50vw;
-    height: 70vh;
+    width: calc(40vw + 20vh);
+    height: calc(90vh - 15vw);
 
     background-color: var(--black_dark);
 
@@ -293,8 +214,8 @@ main {
     position: relative;
     top: 0vh;
 
-    width: 50vw;
-    height: 55vh;
+    width: 100%;
+    height: 85%;
 
     padding: 2rem;
 
@@ -310,7 +231,7 @@ main {
     position: relative;
     top: 0;
 
-    width: 46vw;
+    width: 100%;
     height: 6vh;
 
     background-color: var(--black_light);
@@ -321,6 +242,8 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    margin-bottom: 2vh;
 
     border-radius: 1vw;
     gap: 1rem;
@@ -371,179 +294,6 @@ main {
     height: 60%;
 }
 
-/* ------------------------------- Login & Register form ----------------------------------- */
-#loginForm, #registerForm {
-    position: relative;
-
-    width: 100%;
-
-    padding: 2vw 1vw;
-
-    display: block;
-    overflow: hidden;
-}
-
-#loginForm hr, #registerForm hr {
-    border: 0;
-
-    display: hidden;
-}
-
-#loginForm h2, #registerForm h2 {
-    position: relative;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    width: 60%; 
-
-    font-size: calc(1vw + 1vh);
-
-    display: flex; 
-    justify-content: center; 
-    align-self: center; 
-
-    background-color: transparent;
-}
-
-.loginInputFields, .registerInputFields {
-    position: relative;
-    height: auto;
-    display: flex;
-    
-    background-color: transparent;
-
-    gap: 1rem;
-}
-
-#loginForm label, #registerForm label {
-    display: block;
-
-    margin-bottom: 0.5rem;
-
-    font-weight: bold;
-    font-size: calc(0.5vw + 1vh);
-}
-
-#loginForm input:-webkit-autofill, 
-#registerForm input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px var(--black_light) inset !important;
-
-    -webkit-text-fill-color: var(--beige_light) !important;
-    transition: background-color 9999s ease-in-out 0s;
-}
-
-#loginForm input, #registerForm input {
-    width: 100%;
-    height: 5vh;
-
-    padding: 0.5rem;
-    margin-bottom: 1.5rem;
-    margin-right: -3vw;
-
-    border: none;
-    border-radius: 4px;
-    
-    text-align: left;
-    text-justify: center;
-    font-size: 0;
-
-    background-color: var(--black_light);
-    color: var(--beige_light);
-
-    transition: height 0.3s ease-in, font-size 0.3s ease-out;
-}
-
-#loginForm input:not(:placeholder-shown), #registerForm input:not(:placeholder-shown) {
-    font-size: medium;
-}
-
-#loginForm input:focus, #registerForm input:focus {
-    height: 6vh;
-
-    font-size: larger;
-}
-
-#registerButtons, #loginButtons {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-
-    padding-left: 20%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 2vw;
-}
-
-#registerButtons {
-    padding-left: 15%;
-}
-
-#loginButton, #registerButton {
-    position: relative;
-
-    padding: 0.6rem 1.2rem;
-    font-size: calc(0.4vw + 1.5vh);
-    
-    border: none;
-    border-radius: calc(0.5vh + 0.25vw);
-
-    background-color: var(--orange_dark);
-    color: var(--beige_dark);
-
-    cursor: pointer;
-
-    transition: all 0.3s ease-in;
-}
-
-#loginButton:hover, #registerButton:hover {
-    color: var(--beige_light);
-    background-color: var(--orange_light);
-
-    border-radius: 16px;
-}
-
-#loginRegisterLink, #backToLogin{
-    position: relative;
-
-    background-color: var(--black_light);
-    color: var(--beige_dark);
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 1vh 1vw;
-
-    border-radius: calc(0.5vh + 0.25vw);
-
-    text-decoration: none;
-    font-size: 1rem;
-
-    cursor: pointer;
-
-    transition: all 0.3s ease-in;
-}
-
-#loginRegisterLink:hover, #backToLogin:hover {
-    color: var(--orange);
-}
-
-#loginRegisterLink p, #backToLogin p {
-    font-size: 0.8rem;
-}
-
-.inputStatus {
-    position: relative;
-    top: 0.5vh;
-    
-    width: auto;
-    height: 4vh;
-}  
-
 /* ------------------------------------- Friends section --------------------------------------- */
 #friendsList, #addFriend, #pendingRequests {
     width: 100%;
@@ -571,7 +321,6 @@ main {
     flex-direction: column;
 
     margin-bottom: 0.5rem;
-
 }
 
 #inviteDivParent, #friendsDivParent {
