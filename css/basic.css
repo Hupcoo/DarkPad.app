@@ -173,16 +173,15 @@ nav.active {
 
 #logout {
     position: absolute;
+    left: 50%;
     bottom: 2vh;
 
-    width: 0%;
+    transform: translate(-50%, -50%);
+
+    width: 60%;
 }
 
 #logout a {
-    position: relative;
-    left: 0;
-    bottom: 0vh;
-
     cursor: pointer;
 
     font-weight: bold;

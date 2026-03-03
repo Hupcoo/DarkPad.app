@@ -12,7 +12,7 @@
 main {
     position: relative;
     
-    width: 90vw;
+    width: 80vw;
     max-width: 800px; 
     max-height: 77vh;
 
@@ -20,14 +20,16 @@ main {
     padding: 1.5rem;
 
     background-color: var(--black_dark);
+
     border-radius: 8px;
+
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
 .notes {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: calc(0.2vh + 0.5vw);
 
     overflow-y: auto;
 }

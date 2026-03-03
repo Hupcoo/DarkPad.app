@@ -125,7 +125,7 @@ if (logoutButton) {
 
             if (response.ok) {
                 nullLoggedUser(); 
-                window.location.replace("../account/login.html");
+                window.location.replace("/html/account/login.html");
             } else {
                 alert("Logout failed.");
                 alert("Response: " + response.status + " " + response.statusText);
@@ -168,7 +168,6 @@ if (loginForm) {
                 data = await response.json();
 
                 setLoggedUser(data.username, data.email, data.key, data.user_id);
-                console.log(getLoggedUser());
                 window.location.replace("../navigation/notes.html");
             } catch (error) {
                 alert("Communication error");
