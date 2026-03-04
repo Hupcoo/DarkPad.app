@@ -14,7 +14,8 @@ main {
     
     width: 80vw;
     max-width: 800px; 
-    max-height: calc(65vh + 10vw);
+    min-height: 70vh;
+    max-height: calc(63vh + 10vw);
 
     margin: 2rem auto;
     padding: 1.5rem;
