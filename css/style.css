@@ -14,7 +14,7 @@ main {
     
     width: 80vw;
     max-width: 800px; 
-    max-height: 77vh;
+    max-height: calc(65vh + 10vw);
 
     margin: 2rem auto;
     padding: 1.5rem;
@@ -28,7 +28,7 @@ main {
 
 .notes {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: calc(0.2vh + 0.5vw);
 
     overflow-y: auto;

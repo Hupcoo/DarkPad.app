@@ -68,7 +68,7 @@ header {
     transition: 0.4s;
 }
 
-header img {
+#headerImage {
     width: auto;
     height: calc(1vw + 3vh);
 
@@ -77,8 +77,8 @@ header img {
     transition: all 0.3s ease-in;
 }
 
-header img:hover {
-    filter: drop-shadow(0 0 4px var(--orange_light));
+#headerImage:hover {
+    filter: drop-shadow(0 0 4px var(--orange_dark));
 }
 
 .menu-open div:nth-child(1) {
@@ -206,10 +206,11 @@ footer {
     bottom: 0;
 
     width: 100vw;
-    height: 7vh;
+    height: calc(6vh + 2vw);
 
-    text-align: center;
-    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     background-color: var(--black_dark);
 }
