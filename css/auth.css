@@ -71,6 +71,8 @@ main {
 
 .loginInputFields, .registerInputFields {
     position: relative;
+    margin-right: 0.5vw;
+
     height: auto;
     display: flex;
 }
@@ -87,8 +89,8 @@ main {
 #loginForm input:-webkit-autofill, 
 #registerForm input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px var(--black_light) inset !important;
-
     -webkit-text-fill-color: var(--beige_light) !important;
+
     transition: background-color 9999s ease-in-out 0s;
 }
 
